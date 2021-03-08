@@ -3,7 +3,7 @@ import { Container, Typography, Button, Grid } from "@material-ui/core";
 
 import useStyles from './styles'
 import CartItem from './CartItem/CartItem'
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
     const classes = useStyles()
@@ -27,7 +27,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
                 <Typography variant="h4">Total: {cart.subtotal.formatted_with_symbol}</Typography>
                 <div>
                     <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>Empty Cart</Button>
-                    <Button className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Proceed to Payment</Button>
+                    <Button className={classes.checkoutButton} component={Link} to="/checkout" size="large" type="button" variant="contained" color="primary">Proceed to Payment</Button>
                 </div>
             </div>
         </div>
