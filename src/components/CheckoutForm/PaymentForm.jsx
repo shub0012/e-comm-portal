@@ -8,7 +8,6 @@ import Review from './Review'
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
 
 const PaymentForm = ({ checkoutToken, backStep, shippingData, onCaptureCheckout, nextStep }) => {
-    //console.log(checkoutToken,shippingData)
     const totalPay = shippingData.shippingCountry !== "IN" ? checkoutToken.live.subtotal.raw + checkoutToken.live.shipping.available_options[1].price.raw : checkoutToken.live.subtotal.formatted_with_symbol
 
     const handleSubmit = async (event, elements, stripe) => {
