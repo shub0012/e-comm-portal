@@ -5,13 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const ProductsCarousel = ({products, onAddToCart}) => {
-    console.log(products)
-//     const [index, setIndex] = useState(0);
-
-//   const handleSelect = (selectedIndex, e) => {
-//     setIndex(selectedIndex);
-//     console.log(selectedIndex,index)
-//   };
   return (
         <Carousel indicators={false} >
         {products.map((product) => (

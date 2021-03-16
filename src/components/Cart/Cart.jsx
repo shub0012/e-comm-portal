@@ -9,9 +9,13 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     const classes = useStyles()
 
     const EmptyCart = () => (
-        <Typography variant="subtitle1">It's Empty :( 
-            <Link to="/" className={classes.link}>Start Adding ;)</Link>
-        </Typography>
+        <>
+        <Typography variant="subtitle1" dangerouslySetInnerHTML={{ __html: "Your Cart is Empty &#128562 !!!" }} />
+        <br />
+        <Typography component={Link} to="/" variant="subtitle1" dangerouslySetInnerHTML={{ __html: "Start Adding &#128151" }} />
+        </>
+        
+    
     )
     
     const FilledCart = () => (

@@ -22,14 +22,12 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
             try {
                 const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' } )
                 setCheckoutToken(token)
-                console.log(token)
             } catch (error) {
                 history.pushState('/')
             }
         }
-
         generateToken()
-    }, [cart])
+    }, [cart,history])
 
     //move stepper to next step
     const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1)
